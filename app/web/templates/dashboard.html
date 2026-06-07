@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FreelanceShield</title>
+  <link rel="stylesheet" href="/static/css/app.css">
+</head>
+<body>
+  <div id="auth-screen" class="screen">
+    <div class="auth-card">
+      <h1>FreelanceShield</h1>
+      <p class="subtitle">Late-payment enforcement for freelancers</p>
+      <div id="auth-tabs">
+        <button class="tab active" data-tab="login">Login</button>
+        <button class="tab" data-tab="signup">Sign Up</button>
+      </div>
+      <form id="login-form">
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="password" name="password" placeholder="Password (min 12 chars)" required>
+        <button type="submit">Login</button>
+      </form>
+      <form id="signup-form" class="hidden">
+        <input type="text" name="name" placeholder="Your name" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="password" name="password" placeholder="Password (min 12 chars)" required>
+        <button type="submit">Create Account</button>
+      </form>
+      <p id="auth-error" class="error hidden"></p>
+    </div>
+  </div>
+
+  <div id="app-screen" class="screen hidden">
+    <nav class="sidebar">
+      <div class="logo">FreelanceShield</div>
+      <a href="#" data-view="dashboard" class="nav-link active">Dashboard</a>
+      <a href="#" data-view="invoices" class="nav-link">Invoices</a>
+      <a href="#" data-view="clients" class="nav-link">Clients</a>
+      <a href="#" data-view="documents" class="nav-link">Documents</a>
+      <a href="#" data-view="settings" class="nav-link">Settings</a>
+      <a href="#" data-view="billing" class="nav-link">Billing</a>
+      <button id="logout-btn" class="nav-link logout">Logout</button>
+    </nav>
+    <main class="content">
+      <header class="topbar">
+        <h2 id="page-title">Dashboard</h2>
+        <span id="user-info"></span>
+      </header>
+      <div id="view-dashboard" class="view"></div>
+      <div id="view-invoices" class="view hidden"></div>
+      <div id="view-clients" class="view hidden"></div>
+      <div id="view-documents" class="view hidden"></div>
+      <div id="view-settings" class="view hidden"></div>
+      <div id="view-billing" class="view hidden"></div>
+    </main>
+  </div>
+  <script src="/static/js/app.js"></script>
+</body>
+</html>

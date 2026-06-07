@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invoice Portal — FreelanceShield</title>
+  <link rel="stylesheet" href="/static/css/app.css">
+</head>
+<body class="portal-body">
+  <div class="portal-container">
+    <header class="portal-header">
+      <h1>Invoice Details</h1>
+      <p id="portal-subtitle">Loading...</p>
+    </header>
+    <div id="portal-content" class="portal-card">
+      <p>Loading invoice...</p>
+    </div>
+    <div id="dispute-section" class="portal-card hidden">
+      <h3>Dispute this invoice</h3>
+      <form id="dispute-form">
+        <select name="reason" required>
+          <option value="work_not_completed">Work not completed</option>
+          <option value="work_unsatisfactory">Work unsatisfactory</option>
+          <option value="already_paid">Already paid</option>
+          <option value="amount_incorrect">Amount incorrect</option>
+          <option value="not_authorized">Not authorized</option>
+          <option value="other">Other</option>
+        </select>
+        <textarea name="details" placeholder="Explain your dispute (min 20 characters)" required minlength="20"></textarea>
+        <input type="email" name="contactEmail" placeholder="Your email" required>
+        <button type="submit">Submit Dispute</button>
+      </form>
+    </div>
+  </div>
+  <script>
+    const INVOICE_ID = "{{ invoice_id }}";
+    const TOKEN = "{{ token }}";
+  </script>
+  <script src="/static/js/portal.js"></script>
+</body>
+</html>
